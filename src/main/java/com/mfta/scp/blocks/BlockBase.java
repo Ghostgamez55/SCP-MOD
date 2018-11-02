@@ -29,5 +29,20 @@ public class BlockBase extends Block implements IHasModel
 	{
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
-	
+	@Override
+	public BlockRenderLayer getBlockLayer() 
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
+
+	@Override
+    public boolean isOpaqueCube(IBlockState state) 
+    {
+        return false;
+    }
+	@Override
+    public boolean isFullCube(IBlockState state) 
+    {
+        return false;
+    }
 }
