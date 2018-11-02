@@ -6,3 +6,5 @@
 tile.rough_concrete.name=Rough Concrete
 tile.concrete.name=Concrete
 tile.dark_concrete.name=Dark Concrete
+tile.briefcase_closed.name= Closed Briefcase
+tile.briefcase_open.name= Opened Briefcase
