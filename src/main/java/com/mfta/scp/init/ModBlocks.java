@@ -20,5 +20,8 @@ public class ModBlocks
 	public static final Block DARK_CONCRETE = new Concrete("dark_concrete", Material.CLAY);
 	public static final Block BRIEFCASE_OPEN = new BlockBase("briefcase_open", Material.ANVIL);
 	public static final Block BRIEFCASE_CLOSED = new BlockBase("briefcase_closed", Material.ANVIL);
+	public static final Block BLACK_AND_WHITE_TILE = new BlockBase("black_and_white_tile", Material.ROCK);
+	public static final Block factory_block_full = new BlockBase("factory_block_full", Material.ANVIL);
+	public static final Block factory_block = new BlockBase("factory_block", Material.ANVIL);
 	
 }

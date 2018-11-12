@@ -1,9 +1,13 @@
 package com.mfta.scp.items;
 
+import java.util.Collection;
+
 import com.mfta.scp.Main;
+import com.mfta.scp.init.ModBlocks;
 import com.mfta.scp.init.ModItems;
 import com.mfta.scp.util.IHasModel;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -17,6 +21,8 @@ public class ItemBase extends Item implements IHasModel
 		setCreativeTab(CreativeTabs.MATERIALS);
 		
 		ModItems.ITEMS.add(this);
+		
+	
 	}
 	
 	@Override

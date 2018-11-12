@@ -11,4 +11,7 @@ public class Reference
 	public static final String CLIENT_PROXY_CLASS = "com.mfta.scp.proxy.ClientProxy";
 	public static final String COMMON_PROXY_CLASS = "com.mfta.scp.proxy.CommonProxy";
 	
+	
+	public static final int ENTITY_CENTAUR = 120;
+	
 }
