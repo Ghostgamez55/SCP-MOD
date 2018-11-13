@@ -1,6 +1,6 @@
 package com.mfta.scp.init.sounds;
 
-import com.mfta.scp.util.Reference;
+import com.mfta.scp.Reference;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;

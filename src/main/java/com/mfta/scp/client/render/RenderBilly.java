@@ -1,8 +1,8 @@
 package com.mfta.scp.client.render;
 
+import com.mfta.scp.Reference;
 import com.mfta.scp.client.model.ModelBilly;
 import com.mfta.scp.init.entity.EntityBilly;
-import com.mfta.scp.util.Reference;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
