@@ -1,0 +1,10 @@
+
+{
+	"neck_snap": { 
+		"category": "ambient", 
+		"sounds":[
+			{"name": "scpmod:neck_snap", "stream": true}
+		]
+	}
+	
+}

@@ -3,6 +3,7 @@ package com.mfta.scp;
 import com.mfta.scp.client.render.RenderBilly;
 import com.mfta.scp.init.ModEntities;
 import com.mfta.scp.init.entity.EntityBilly;
+import com.mfta.scp.init.sounds.ModSounds;
 import com.mfta.scp.proxy.CommonProxy;
 import com.mfta.scp.util.Reference;
 
@@ -32,7 +33,7 @@ public class Main
 	@EventHandler
 	public static void init(FMLPreInitializationEvent event)
 	{
-		
+		ModSounds.registerSounds();
 	}
 	
 	@EventHandler
