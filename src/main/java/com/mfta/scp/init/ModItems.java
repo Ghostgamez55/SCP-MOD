@@ -3,7 +3,10 @@ package com.mfta.scp.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mfta.scp.SCPMain;
+import com.mfta.scp.init.items.ItemHungryBag;
 import com.mfta.scp.init.items.ItemSCP;
+import com.mfta.scp.proxy.CommonProxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -14,10 +17,7 @@ public class ModItems {
 
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 
-	// items
-	public static final Item HUNGRY_BAG = new ItemSCP("hungry_bag") {
-
-	};
+	public static final Item HUNGRY_BAG = new ItemHungryBag("hungry_bag");
 
 	public static void registerItems() {
 		ForgeRegistries.ITEMS.registerAll(ITEMS.toArray(new Item[ITEMS.size()]));
