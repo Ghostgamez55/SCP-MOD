@@ -1,14 +1,14 @@
 [
 {
-  "modid": "scp",
-  "name": "SCP Mod",
-  "description": "This Mod implements the worst and most dangerous Entities the World has ever known. Some of these Entities lived longer then the Earth exists. They were locked inside a special, highly armed and Secret Compund. But they've found a way out. Now they are free, and it is on you Survivor to stop them from befalling the World. Their Names are different in all Languages, but their Facility names stay the same. They are called: SCP's",
-  "version": "{1.0}",
-  "mcversion": "{1.12.2}",
+  "modid": "examplemod",
+  "name": "Example Mod",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Epicghost505"],
-  "credits": "The Mods from the Afterlife SCP Developement Team, the Creators of SCP-Tales,...",
+  "authorList": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
