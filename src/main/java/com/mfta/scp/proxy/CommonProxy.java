@@ -30,10 +30,6 @@ public class CommonProxy {
 		}
 	}
 	
-    public ModelBiped getArmorModel(ItemStack armorItem, int id) {
-		return null;
-	}
-	
 	public void preInit(FMLPreInitializationEvent event)
 	{	
 		ModBlocks.registerBlocks();
