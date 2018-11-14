@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "scp:briefcase_closed" }
+        "normal": { "model": "scpmod:briefcase_closed" }
     }
 }

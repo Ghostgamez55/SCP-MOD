@@ -1,9 +1,9 @@
 {
 	"textures": {
-		"0": "scp:blocks/briefcase_base",
-		"1": "scp:blocks/metallic2",
-		"2": "scp:blocks/briefcase_top",
-		"particle": "scp:blocks/briefcase_base"
+		"0": "scpmod:blocks/briefcase_base",
+		"1": "scpmod:blocks/metallic2",
+		"2": "scpmod:blocks/briefcase_top",
+		"particle": "scpmod:blocks/briefcase_base"
 	},
 	"elements": [
 		{
