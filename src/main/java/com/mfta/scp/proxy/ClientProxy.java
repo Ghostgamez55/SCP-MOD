@@ -1,8 +1,10 @@
 package com.mfta.scp.proxy;
 
+import com.mfta.scp.client.render.RenderBigFoot;
 import com.mfta.scp.client.render.RenderBilly;
 import com.mfta.scp.init.ModBlocks;
 import com.mfta.scp.init.ModItems;
+import com.mfta.scp.init.entity.EntityBigFoot;
 import com.mfta.scp.init.entity.EntityBilly;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -14,6 +16,7 @@ public class ClientProxy extends CommonProxy {
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
 
+		RenderingRegistry.registerEntityRenderingHandler(EntityBigFoot.class, new RenderBigFoot.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBilly.class, new RenderBilly.RenderFactory());
 	}
 }

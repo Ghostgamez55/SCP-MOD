@@ -2,6 +2,7 @@ package com.mfta.scp.init;
 
 import com.mfta.scp.Reference;
 import com.mfta.scp.SCPMain;
+import com.mfta.scp.init.entity.EntityBigFoot;
 import com.mfta.scp.init.entity.EntityBilly;
 
 import net.minecraft.util.ResourceLocation;
@@ -16,6 +17,7 @@ public class ModEntities {
 
 	public static void registerEntity() {
 		createEntity(EntityBilly.class, "Billy", 0x000000, 0x000000);
+		createEntity(EntityBigFoot.class, "BigFoot", 0x000000, 0x000000);
 	}
 	
 	private static void createEntity(Class entityClass, String entityName, int prim, int sec) {
