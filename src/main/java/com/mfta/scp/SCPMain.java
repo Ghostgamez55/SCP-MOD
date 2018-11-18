@@ -1,9 +1,6 @@
 package com.mfta.scp;
 
 import com.mfta.scp.proxy.CommonProxy;
-import com.mfta.scp.tabs.ScpModTab;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -20,8 +17,6 @@ public class SCPMain
 	
 	@Mod.Instance(Reference.MOD_ID)
 	public static SCPMain instance;
-	
-	public static final CreativeTabs SCPTAB = new ScpModTab("scp");
 	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {

@@ -4,13 +4,13 @@ import com.mfta.scp.Reference;
 import com.mfta.scp.SCPMain;
 import com.mfta.scp.init.entity.EntityBigFoot;
 import com.mfta.scp.init.entity.EntityBilly;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 /**
  * @author SoggyMustache
  */
+//TODO Update to use Events and Entity Entries
 public class ModEntities {
 
 	private static int id = 0;

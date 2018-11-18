@@ -1,13 +1,11 @@
 package com.mfta.scp.init.blocks;
 
-import com.mfta.scp.SCPMain;
 import com.mfta.scp.init.ModBlocks;
 import com.mfta.scp.init.ModItems;
-
+import com.mfta.scp.tabs.SCPTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 
@@ -17,7 +15,7 @@ public class BlockSCP extends Block {
 		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(SCPMain.SCPTAB);
+		setCreativeTab(SCPTabs.SCP_TAB);
 
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

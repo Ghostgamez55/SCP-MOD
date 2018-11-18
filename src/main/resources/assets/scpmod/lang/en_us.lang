@@ -13,3 +13,5 @@ tile.factory_block_FULL.name= Factory Block Full
 tile.factory_block.name= Factory Block
 
 entity.Billy.name=Billy
+
+itemGroup.scpmodtab=SCP mod

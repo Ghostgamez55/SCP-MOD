@@ -1,32 +1,47 @@
 package com.mfta.scp.init;
 
+import com.mfta.scp.Reference;
+import com.mfta.scp.init.items.ItemHungryBag;
+import com.mfta.scp.tabs.SCPTabs;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mfta.scp.SCPMain;
-import com.mfta.scp.init.items.ItemHungryBag;
-import com.mfta.scp.init.items.ItemSCP;
-import com.mfta.scp.proxy.CommonProxy;
-
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-
+@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class ModItems {
-
+	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
-
-	public static final Item HUNGRY_BAG = new ItemHungryBag("hungry_bag");
-
-	public static void registerItems() {
-		ForgeRegistries.ITEMS.registerAll(ITEMS.toArray(new Item[ITEMS.size()]));
+	
+	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag");
+	
+	@SubscribeEvent
+	public static void registerItems(RegistryEvent.Register<Item> e) {
+		e.getRegistry().registerAll(ITEMS.toArray(new Item[ITEMS.size()]));
 	}
-
-	public static void registerRenders() {
+	
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent
+	public static void registerRenders(ModelRegistryEvent e) {
 		for (Item itm : ITEMS) {
 			ModelLoader.setCustomModelResourceLocation(itm, 0, new ModelResourceLocation(itm.getRegistryName(), "inventory"));
 		}
 	}
-
+	
+	private static Item setUpItem(Item item, String name) {
+		item.setRegistryName(Reference.MOD_ID, name);
+		item.setUnlocalizedName(name);
+		item.setCreativeTab(SCPTabs.SCP_TAB);
+		ITEMS.add(item);
+		return item;
+	}
+	
 }

@@ -1,11 +1,7 @@
 package com.mfta.scp.init;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.mfta.scp.init.blocks.BlockSCP;
 import com.mfta.scp.init.blocks.Concrete;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -13,6 +9,10 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
+import java.util.ArrayList;
+import java.util.List;
+
+//TODO Make to use Events instead of Forge Registries
 public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
@@ -25,6 +25,7 @@ public class ModBlocks {
 	public static final Block BLACK_AND_WHITE_TILE = new BlockSCP("black_and_white_tile", Material.ROCK);
 	public static final Block FACTORY_BLOCK_FULL = new BlockSCP("factory_block_full", Material.ANVIL);
 	public static final Block FACTORY_BLOCK = new BlockSCP("factory_block", Material.ANVIL);
+	
 	
 	public static void registerBlocks() {
 		ForgeRegistries.BLOCKS.registerAll(BLOCKS.toArray(new Block[BLOCKS.size()]));

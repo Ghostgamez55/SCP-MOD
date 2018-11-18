@@ -2,7 +2,6 @@ package com.mfta.scp.init.items;
 
 import com.mfta.scp.SCPMain;
 import com.mfta.scp.proxy.CommonProxy;
-
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 
@@ -10,8 +9,7 @@ public class ItemHungryBag extends ItemSCP{
 
 	public IInventory inventory;
 	
-	public ItemHungryBag(String name) {
-		super(name);
+	public ItemHungryBag() {
 		this.inventory = new InventoryBasic("Hungry Bag", true, 5);
 	}
 	 
