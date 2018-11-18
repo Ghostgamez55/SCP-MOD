@@ -1,12 +1,15 @@
 package com.mfta.scp.proxy;
 
 import com.mfta.scp.SCPMain;
+import com.mfta.scp.event.SCPEventHandler;
 import com.mfta.scp.gui.GuiHandler;
 import com.mfta.scp.init.ModBlocks;
 import com.mfta.scp.init.ModEntities;
 import com.mfta.scp.init.ModItems;
 import com.mfta.scp.init.sounds.ModSounds;
 
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -36,6 +39,8 @@ public class CommonProxy {
 		ModBlocks.registerBlocks();
 		ModItems.registerItems();
 		ModEntities.registerEntity();
+		
+		MinecraftForge.EVENT_BUS.register(new SCPEventHandler());
 	}
 	
 	public void init(FMLInitializationEvent event) {		
