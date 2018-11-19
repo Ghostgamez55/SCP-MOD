@@ -1,39 +1,55 @@
 package com.mfta.scp.init;
 
+import com.mfta.scp.Reference;
+import com.mfta.scp.init.blocks.BlockConcrete;
 import com.mfta.scp.init.blocks.BlockSCP;
-import com.mfta.scp.init.blocks.Concrete;
+import com.mfta.scp.tabs.SCPTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO Make to use Events instead of Forge Registries
+@Mod.EventBusSubscriber
 public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
-	public static final Block ROUGH_CONCRETE = new Concrete("rough_concrete", Material.CLAY);
-	public static final Block CONCRETE = new Concrete("concrete", Material.CLAY);
-	public static final Block DARK_CONCRETE = new Concrete("dark_concrete", Material.CLAY);
-	public static final Block BRIEFCASE_OPEN = new BlockSCP("briefcase_open", Material.ANVIL);
-	public static final Block BRIEFCASE_CLOSED = new BlockSCP("briefcase_closed", Material.ANVIL);
-	public static final Block BLACK_AND_WHITE_TILE = new BlockSCP("black_and_white_tile", Material.ROCK);
-	public static final Block FACTORY_BLOCK_FULL = new BlockSCP("factory_block_full", Material.ANVIL);
-	public static final Block FACTORY_BLOCK = new BlockSCP("factory_block", Material.ANVIL);
+	public static final Block ROUGH_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "rough_concrete");
+	public static final Block CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "concrete");
+	public static final Block DARK_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "dark_concrete");
+	public static final Block BRIEFCASE_OPEN = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_open");
+	public static final Block BRIEFCASE_CLOSED = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_closed");
+	public static final Block BLACK_AND_WHITE_TILE = setUpBlock(new BlockSCP(Material.ROCK), "black_and_white_tile");
+	public static final Block FACTORY_BLOCK_FULL = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block_full");
+	public static final Block FACTORY_BLOCK = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block");
 	
-	
-	public static void registerBlocks() {
-		ForgeRegistries.BLOCKS.registerAll(BLOCKS.toArray(new Block[BLOCKS.size()]));
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> e) {
+		e.getRegistry().registerAll(BLOCKS.toArray(new Block[BLOCKS.size()]));
 	}
 	
-	public static void registerRenders() {
+	@SubscribeEvent
+	public static void registerRenders(ModelRegistryEvent e) {
 		for(Block itm : BLOCKS) {
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(itm), 0, new ModelResourceLocation(itm.getRegistryName(), "inventory"));
 		}
+	}
+	
+	private static Block setUpBlock(Block block, String name) {
+		block.setRegistryName(Reference.MOD_ID, name);
+		block.setUnlocalizedName(name);
+		block.setCreativeTab(SCPTabs.SCP_TAB);
+		BLOCKS.add(block);
+		ModItems.ITEMS.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		return block;
 	}
 }

@@ -3,8 +3,8 @@ package com.mfta.scp.proxy;
 import com.mfta.scp.SCPMain;
 import com.mfta.scp.event.SCPEventHandler;
 import com.mfta.scp.gui.GuiHandler;
-import com.mfta.scp.init.ModBlocks;
 import com.mfta.scp.init.ModEntities;
+import com.mfta.scp.init.dimension.SCPDimensions;
 import com.mfta.scp.init.sounds.ModSounds;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -32,14 +32,13 @@ public class CommonProxy {
 	}
 	
 	public void preInit(FMLPreInitializationEvent event) {
-		ModBlocks.registerBlocks();
 		ModEntities.registerEntity();
-		
 		MinecraftForge.EVENT_BUS.register(new SCPEventHandler());
 	}
 	
 	public void init(FMLInitializationEvent event) {		
 		ModSounds.registerSounds();
+		SCPDimensions.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCPMain.instance, new GuiHandler());
 	}
 	
