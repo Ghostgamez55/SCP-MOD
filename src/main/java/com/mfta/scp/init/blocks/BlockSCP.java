@@ -10,7 +10,7 @@ public class BlockSCP extends Block {
 	
 	public BlockSCP(Material material) {
 		super(material);
-		setCreativeTab(SCPTabs.SCP_TAB);
+		setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 	}
 
 	@Override
