@@ -31,11 +31,11 @@ public class ModItems {
 	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag");
 	//food
 	public static final Item MEDKIT = new FoodBase("medkit", 20, 5f, false);
-	public static final Item INFECTED_BEEF = new FoodEfectBase("infected_beef", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 1, false, true));
-	public static final Item INFECTED_CHICKEN = new FoodEfectBase("infected_chicken", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 1, false, true));
-	public static final Item INFECTED_RABBIT_RAW = new FoodEfectBase("infected_rabbit_raw", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 1, false, true));
-	public static final Item INFECTED_MUTTON = new FoodEfectBase("infected_mutton", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 1, false, true));
-	public static final Item INFECTED_PORKCHOP = new FoodEfectBase("infected_porkchop", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 1, false, true));
+	public static final Item INFECTED_BEEF = new FoodEfectBase("infected_beef", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 2, false, true));
+	public static final Item INFECTED_CHICKEN = new FoodEfectBase("infected_chicken", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 2, false, true));
+	public static final Item INFECTED_RABBIT_RAW = new FoodEfectBase("infected_rabbit_raw", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 2, false, true));
+	public static final Item INFECTED_MUTTON = new FoodEfectBase("infected_mutton", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 2, false, true));
+	public static final Item INFECTED_PORKCHOP = new FoodEfectBase("infected_porkchop", 0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60*20), 2, false, true));
 	
 	
 	@SubscribeEvent
