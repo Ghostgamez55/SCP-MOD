@@ -51,7 +51,9 @@ public class ModBlocks {
 	private static Block setUpBlock(Block block, String name) {
 		block.setRegistryName(Reference.MOD_ID, name);
 		block.setTranslationKey(name);
-		block.setCreativeTab(SCPTabs.SCP_TAB);
+		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
+		block.setTranslationKey(name);
+		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 		BLOCKS.add(block);
 		ModItems.ITEMS.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		return block;
