@@ -1,7 +1,7 @@
 package com.mfta.scp.proxy;
 
 import com.mfta.scp.SCPMain;
-import com.mfta.scp.event.SCPEventHandler;
+import com.mfta.scp.event.SCPCommonHandler;
 import com.mfta.scp.gui.GuiHandler;
 import com.mfta.scp.init.ModEntities;
 import com.mfta.scp.init.dimension.SCPDimensions;
@@ -33,7 +33,7 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		ModEntities.registerEntity();
-		MinecraftForge.EVENT_BUS.register(new SCPEventHandler());
+		MinecraftForge.EVENT_BUS.register(new SCPCommonHandler());
 	}
 	
 	public void init(FMLInitializationEvent event) {		

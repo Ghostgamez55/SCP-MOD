@@ -32,6 +32,10 @@ public class ModBlocks {
 	public static final Block FACTORY_BLOCK_FULL = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block_full");
 	public static final Block FACTORY_BLOCK = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block");
 	
+	public static final Block STONE_TOILET = setUpBlock(new BlockSCP(Material.ANVIL), "stone_toilet");
+	public static final Block MARBLE_SHELF = setUpBlock(new BlockSCP(Material.ANVIL), "marble_shelf");
+	public static final Block HANGING_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "hanging_lamp").setLightLevel(1.0F);
+	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> e) {
 		e.getRegistry().registerAll(BLOCKS.toArray(new Block[BLOCKS.size()]));

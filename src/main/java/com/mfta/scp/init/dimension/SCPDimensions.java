@@ -9,8 +9,8 @@ public class SCPDimensions {
 	public static DimensionType DIM_GAS;
 	
 	public static void init() {
-		DIM_GAS = DimensionType.register("GAS", "_gas", DIM_GAS_ID, WorldProviderGas.class, false);
-		DimensionManager.registerDimension(DIM_GAS_ID, DIM_GAS);
+	//	DIM_GAS = DimensionType.register("GAS", "_gas", DIM_GAS_ID, WorldProviderGas.class, false);
+	//	DimensionManager.registerDimension(DIM_GAS_ID, DIM_GAS);
 	}
 	
 }

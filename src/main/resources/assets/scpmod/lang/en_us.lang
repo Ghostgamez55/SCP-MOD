@@ -11,6 +11,9 @@ tile.briefcase_open.name= Opened Briefcase
 tile.black_and_white_tile.name= Black And White Tile
 tile.factory_block_FULL.name= Factory Block Full
 tile.factory_block.name= Factory Block
+tile.stone_toilet.name=Stone Toilet
+tile.marble_shelf.name=Marble Shelf
+tile.hanging_lamp.name=Hanging lamp
 
 entity.Billy.name=Billy
 

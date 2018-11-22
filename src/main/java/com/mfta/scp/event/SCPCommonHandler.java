@@ -6,7 +6,7 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class SCPEventHandler {
+public class SCPCommonHandler {
 	
 	@SubscribeEvent
 	public void onSpawn(LivingSpawnEvent e) {
