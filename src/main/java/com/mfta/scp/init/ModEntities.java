@@ -4,6 +4,7 @@ import com.mfta.scp.Reference;
 import com.mfta.scp.SCPMain;
 import com.mfta.scp.init.entity.EntityBigFoot;
 import com.mfta.scp.init.entity.EntityBilly;
+import com.mfta.scp.init.entity.projectiles.EntityFlare;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
@@ -18,13 +19,14 @@ public class ModEntities {
 	public static void registerEntity() {
 		createEntity(EntityBilly.class, "Billy", 0x000000, 0x000000);
 		createEntity(EntityBigFoot.class, "BigFoot", 0x000000, 0x000000);
+		createEntity(EntityFlare.class, "flare");
 	}
 	
 	private static void createEntity(Class entityClass, String entityName, int prim, int sec) {
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true, prim, sec);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true, prim, sec);
 	}
-
-	private static void createEntityNE(Class entityClass, String entityName) {
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true);
+	
+	private static void createEntity(Class entityClass, String entityName) {
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true);
 	}
 }

@@ -1,7 +1,9 @@
 package com.mfta.scp.init;
 
 import com.mfta.scp.Reference;
+import com.mfta.scp.init.items.ItemFlareGun;
 import com.mfta.scp.init.items.ItemHungryBag;
+import com.mfta.scp.init.items.ItemSCP;
 import com.mfta.scp.tabs.SCPTabs;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -22,6 +24,8 @@ public class ModItems {
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 	
 	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag");
+	public static final Item FLARE_AMMO = setUpItem(new ItemSCP(), "flare_ammo");
+	public static final Item FLARE_GUN = setUpItem(new ItemFlareGun(), "flare_gun");
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> e) {
@@ -38,7 +42,7 @@ public class ModItems {
 	
 	private static Item setUpItem(Item item, String name) {
 		item.setRegistryName(Reference.MOD_ID, name);
-		item.setUnlocalizedName(name);
+		item.setTranslationKey(name);
 		item.setCreativeTab(SCPTabs.SCP_TAB);
 		ITEMS.add(item);
 		return item;

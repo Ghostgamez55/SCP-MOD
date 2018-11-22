@@ -1,15 +1,9 @@
 package com.mfta.scp.init.entity;
 
 import com.mfta.scp.init.sounds.ModSounds;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -27,7 +21,7 @@ public class EntityBilly extends EntityMob {
 		this.tasks.addTask(1, new EntityAIWander(this, 0.7D));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
+		this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.26D, true));
 	}
@@ -44,21 +38,21 @@ public class EntityBilly extends EntityMob {
 	public void onLivingUpdate() {
 
 		if (this.world.getClosestPlayerToEntity(this, 30.0D) instanceof EntityPlayer) {
-			EntityPlayer entityIn = (EntityPlayer) this.world.getClosestPlayerToEntity(this, 30.0D);
+			EntityPlayer entityIn = this.world.getClosestPlayerToEntity(this, 30.0D);
         	theWatcher = entityIn;
             Vec3d vec3d = entityIn.getLook(1.0F).normalize();
             Vec3d vec3d1 = new Vec3d(this.posX - entityIn.posX, this.getEntityBoundingBox().minY + (double)this.getEyeHeight() - (entityIn.posY + (double)entityIn.getEyeHeight()), this.posZ - entityIn.posZ);
-            double d0 = vec3d1.lengthVector();
+			double d0 = vec3d1.length();
             vec3d1 = vec3d1.normalize();
             double d1 = vec3d.dotProduct(vec3d1);
-            beingWatched = d1 > 1.0D - 0.425D / d0 ? entityIn.canEntityBeSeen(this) : false;
+			beingWatched = d1 > 1.0D - 0.425D / d0 && entityIn.canEntityBeSeen(this);
 		}
 		super.onLivingUpdate();
 	}
 
 	@Override
 	protected boolean isMovementBlocked() {
-		return isBeingWatched() ? true : super.isMovementBlocked();
+		return isBeingWatched() || super.isMovementBlocked();
 	}
 	
 	public boolean attackEntityAsMob(Entity e) {
@@ -69,7 +63,7 @@ public class EntityBilly extends EntityMob {
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		return source == DamageSource.LAVA || source == DamageSource.OUT_OF_WORLD ? super.attackEntityFrom(source, amount) : false;
+		return (source == DamageSource.LAVA || source == DamageSource.OUT_OF_WORLD) && super.attackEntityFrom(source, amount);
 	}
 	
 	@Override

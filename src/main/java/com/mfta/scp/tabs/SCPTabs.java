@@ -8,14 +8,15 @@ import net.minecraft.item.ItemStack;
 public class SCPTabs {
 	
 	public static CreativeTabs SCP_TAB = new CreativeTabs("scpmodtab") {
-		@Override
-		public ItemStack getTabIconItem() {
-			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
-		}
 		
 		@Override
 		public CreativeTabs setBackgroundImageName(String texture) {
 			return super.setBackgroundImageName("scpmodtab.png");
+		}
+		
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};
 	
