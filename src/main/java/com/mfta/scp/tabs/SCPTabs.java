@@ -15,7 +15,7 @@ public class SCPTabs {
 		}
 
 		@Override
-		public ItemStack getTabIconItem() {
+		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};
@@ -28,7 +28,7 @@ public class SCPTabs {
 		}
 
 		@Override
-		public ItemStack getTabIconItem() {
+		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};
@@ -41,7 +41,7 @@ public class SCPTabs {
 		}
 
 		@Override
-		public ItemStack getTabIconItem() {
+		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};

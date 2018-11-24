@@ -42,7 +42,7 @@ public class EntityBilly extends EntityMob {
         	theWatcher = entityIn;
             Vec3d vec3d = entityIn.getLook(1.0F).normalize();
             Vec3d vec3d1 = new Vec3d(this.posX - entityIn.posX, this.getEntityBoundingBox().minY + (double)this.getEyeHeight() - (entityIn.posY + (double)entityIn.getEyeHeight()), this.posZ - entityIn.posZ);
-			double d0 = vec3d1.lengthVector();
+			double d0 = vec3d1.length();
             vec3d1 = vec3d1.normalize();
             double d1 = vec3d.dotProduct(vec3d1);
 			beingWatched = d1 > 1.0D - 0.425D / d0 && entityIn.canEntityBeSeen(this);
