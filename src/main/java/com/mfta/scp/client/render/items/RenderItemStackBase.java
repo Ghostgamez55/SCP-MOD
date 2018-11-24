@@ -1,4 +1,4 @@
-package me.fril.angels.client.renders.items;
+package com.mfta.scp.client.render.items;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
