@@ -34,6 +34,7 @@ public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent event) {
 		ModEntities.registerEntity();
 		MinecraftForge.EVENT_BUS.register(new SCPCommonHandler());
+		SCPDimensions.init();
 	}
 	
 	public void init(FMLInitializationEvent event) {		

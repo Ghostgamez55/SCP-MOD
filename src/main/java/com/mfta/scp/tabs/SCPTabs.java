@@ -8,37 +8,40 @@ import net.minecraft.item.ItemStack;
 public class SCPTabs {
 	
 	public static CreativeTabs SCP_TAB_BLOCKS = new CreativeTabs("scptabblocks") {
-		@Override
-		public ItemStack createIcon() {
-			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
-		}
 		
 		@Override
 		public CreativeTabs setBackgroundImageName(String texture) {
-			return super.setBackgroundImageName("scpmodtab.png");
+			return super.setBackgroundImageName("tab_scpmodtab.png");
+		}
+
+		@Override
+		public ItemStack getTabIconItem() {
+			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};
 	
 	public static CreativeTabs SCP_TAB_ITEMS = new CreativeTabs("scptabitems") {
-		@Override
-		public ItemStack createIcon() {
-			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
-		}
 		
 		@Override
 		public CreativeTabs setBackgroundImageName(String texture) {
-			return super.setBackgroundImageName("scpmodtab.png");
+			return super.setBackgroundImageName("tab_scpmodtab.png");
+		}
+
+		@Override
+		public ItemStack getTabIconItem() {
+			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};
 	
 	public static CreativeTabs SCP_TAB_MISCELLANEOUS = new CreativeTabs("scptabmiscellaneous") {
-		@Override
-		public CreativeTabs setBackgroundImageName(String texture) {
-			return super.setBackgroundImageName("scpmodtab.png");
-		}
 		
 		@Override
-		public ItemStack createIcon() {
+		public CreativeTabs setBackgroundImageName(String texture) {
+			return super.setBackgroundImageName("tab_scpmodtab.png");
+		}
+
+		@Override
+		public ItemStack getTabIconItem() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
 	};

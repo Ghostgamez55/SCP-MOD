@@ -17,7 +17,7 @@ public class ModEntities {
 	private static int id = 0;
 
 	public static void registerEntity() {
-		createEntity(EntityBilly.class, "Billy", 0x000000, 0x000000);
+		createEntity(EntityBilly.class, "SCP-173", 0x000000, 0x000000);
 		createEntity(EntityBigFoot.class, "BigFoot", 0x000000, 0x000000);
 		createEntity(EntityFlare.class, "flare");
 	}

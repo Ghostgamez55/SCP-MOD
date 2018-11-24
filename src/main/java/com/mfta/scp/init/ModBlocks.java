@@ -2,6 +2,7 @@ package com.mfta.scp.init;
 
 import com.mfta.scp.Reference;
 import com.mfta.scp.init.blocks.BlockConcrete;
+import com.mfta.scp.init.blocks.BlockFactoryBlock;
 import com.mfta.scp.init.blocks.BlockSCP;
 import com.mfta.scp.tabs.SCPTabs;
 import net.minecraft.block.Block;
@@ -30,7 +31,7 @@ public class ModBlocks {
 	public static final Block BRIEFCASE_CLOSED = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_closed");
 	public static final Block BLACK_AND_WHITE_TILE = setUpBlock(new BlockSCP(Material.ROCK), "black_and_white_tile");
 	public static final Block FACTORY_BLOCK_FULL = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block_full");
-	public static final Block FACTORY_BLOCK = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block");
+	public static final Block FACTORY_BLOCK = setUpBlock(new BlockFactoryBlock(), "factory_block");
 	
 	public static final Block STONE_TOILET = setUpBlock(new BlockSCP(Material.ANVIL), "stone_toilet");
 	public static final Block MARBLE_SHELF = setUpBlock(new BlockSCP(Material.ANVIL), "marble_shelf");
@@ -50,9 +51,9 @@ public class ModBlocks {
 	
 	private static Block setUpBlock(Block block, String name) {
 		block.setRegistryName(Reference.MOD_ID, name);
-		block.setTranslationKey(name);
+		block.setUnlocalizedName(name);
 		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
-		block.setTranslationKey(name);
+		block.setUnlocalizedName(name);
 		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 		BLOCKS.add(block);
 		ModItems.ITEMS.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));

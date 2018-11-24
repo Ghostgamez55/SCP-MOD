@@ -54,7 +54,7 @@ public class ModItems {
 	
 	private static Item setUpItem(Item item, String name) {
 		item.setRegistryName(Reference.MOD_ID, name);
-		item.setTranslationKey(name);
+		item.setUnlocalizedName(name);
 		item.setCreativeTab(SCPTabs.SCP_TAB_ITEMS);
 		ITEMS.add(item);
 		return item;
