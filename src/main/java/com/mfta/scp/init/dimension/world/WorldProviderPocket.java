@@ -13,6 +13,16 @@ public class WorldProviderPocket extends WorldProvider {
 	}
 	
 	@Override
+	public boolean hasSkyLight() {
+		return false;
+	}
+	
+	@Override
+	public boolean doesWaterVaporize() {
+		return true;
+	}
+	
+	@Override
 	public String getSaveFolder() {
 		return "pocketdim";
 	}

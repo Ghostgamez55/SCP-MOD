@@ -1,5 +1,7 @@
 package com.mfta.scp.init.dimension;
 
+import com.mfta.scp.Reference;
+import com.mfta.scp.init.dimension.world.WorldProviderGas;
 import com.mfta.scp.init.dimension.world.WorldProviderPocket;
 
 import net.minecraft.world.DimensionType;
@@ -15,12 +17,12 @@ public class SCPDimensions {
 	public static DimensionType DIM_POCKET;
 	
 	public static void init() {
-	//	DIM_GAS = DimensionType.register("GAS", "_gas", DIM_GAS_ID, WorldProviderGas.class, false);
-	//	DimensionManager.registerDimension(DIM_GAS_ID, DIM_GAS);
 		
-	//DIM_POCKET = DimensionType.register("POCKET", "_pocket", DIM_POCKET_ID, WorldProviderPocket.class, false);
-	//DimensionManager.registerDimension(DIM_POCKET_ID, DIM_POCKET);
-
+			//DIM_GAS = DimensionType.register(Reference.MOD_ID, "_gas", DIM_GAS_ID, WorldProviderGas.class, false);
+			//DimensionManager.registerDimension(DIM_GAS_ID, DIM_GAS);
+		
+			DIM_POCKET = DimensionType.register(Reference.MOD_ID, "_pocket", DIM_POCKET_ID, WorldProviderPocket.class, false);
+			DimensionManager.registerDimension(DIM_POCKET_ID, DIM_POCKET);
 	}
 	
 }
