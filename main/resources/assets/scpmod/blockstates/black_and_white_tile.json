@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model" : "scpmod:black_and_white_tile" }
+    }
+}
