@@ -14,7 +14,7 @@ tile.marble_shelf.name=Marble Shelf
 tile.hanging_lamp.name=Hanging lamp
 
 //entitys
-entity.SCP-173.name=Billy
+entity.Billy.name=Billy
 entity.BigFoot.name=BigFoot
 
 //Tabs
