@@ -38,7 +38,7 @@ public class ModItems {
 	public static final int SCP_ARMOR = 0;
 	
 	//bags
-	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag");
+	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag").setMaxStackSize(1);
 	
 	//food
 	public static final Item MEDKIT = setUpItem(new FoodBase(20, 5f, false), "medkit");
