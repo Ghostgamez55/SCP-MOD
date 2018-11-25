@@ -24,3 +24,10 @@ run
 formatter/
 classes/
 build/
+
+# logfiles & licenses
+CREDITS*
+LICENSE*
+MinecraftForge-Credits.txt
+Pauls*
+
