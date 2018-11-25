@@ -14,10 +14,10 @@ public class ModSounds {
 		NECK_SNAP = registerSound(Reference.MOD_ID + ":neck_snap");
 	}
 
-	private static SoundEvent registerSound(String name) {
-		ResourceLocation l = new ResourceLocation(name);
+	private static SoundEvent registerSound(String s) {
+		ResourceLocation l = new ResourceLocation(s);
 		SoundEvent event = new SoundEvent(l);
-		event.setRegistryName(name);
+		event.setRegistryName(s);
 		ForgeRegistries.SOUND_EVENTS.register(event);
 		return event;
 	}

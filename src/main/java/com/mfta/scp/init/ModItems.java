@@ -37,7 +37,9 @@ public class ModItems {
 	
 	public static final int SCP_ARMOR = 0;
 	
+	//bags
 	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag");
+	
 	//food
 	public static final Item MEDKIT = setUpItem(new FoodBase(20, 5f, false), "medkit");
 	public static final Item INFECTED_BEEF = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_beef");
@@ -45,9 +47,12 @@ public class ModItems {
 	public static final Item INFECTED_RABBIT_RAW = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_rabbit_raw");
 	public static final Item INFECTED_MUTTON = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_mutton");
 	public static final Item INFECTED_PORKCHOP = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_porkchop");
+	
+	//items
 	public static final Item FLARE_AMMO = setUpItem(new ItemSCP(), "flare_ammo");
 	public static final Item FLARE_GUN = setUpItem(new ItemFlareGun(), "flare_gun");
 	
+	//armor
 	public static final Item SCP_ARMOR_HEAD = setUpItem(new ItemSpecialArmor(SCP_ARMOR, SCP, 0, EntityEquipmentSlot.HEAD), "scp_armor_head");
 	public static final Item SCP_ARMOR_CHEST = setUpItem(new ItemSpecialArmor(SCP_ARMOR, SCP, 0, EntityEquipmentSlot.CHEST), "scp_armor_chest");
 	//Seems like there is no model for these?

@@ -1,30 +1,27 @@
 //Items
 item.hungry_bag.name=Hungry Bag
 
-
 //Blocks
-tile.rough_concrete.name=Rough Concrete
 tile.concrete.name=Concrete
 tile.dark_concrete.name=Dark Concrete
 tile.briefcase_closed.name=Closed Briefcase
 tile.briefcase_open.name=Opened Briefcase
 tile.black_and_white_tile.name=Black And White Tile
-tile.factory_block_FULL.name=Factory Block Full
+tile.factory_block_full.name=Factory Block Full
 tile.factory_block.name=Factory Block
 tile.stone_toilet.name=Stone Toilet
 tile.marble_shelf.name=Marble Shelf
 tile.hanging_lamp.name=Hanging lamp
 
-entity.Billy.name=Billy
-
-itemGroup.scpmodtab=SCP mod
+//entitys
+entity.SCP-173.name=Billy
 entity.BigFoot.name=BigFoot
 
 //Tabs
 itemGroup.scptabblocks=SCP Mod Blocks
 itemGroup.scptabitems=SCP Mod Items
 itemGroup.scptabmiscellaneous=SCP Mod Miscellaneous
-
+itemGroup.scpmodtab=SCP mod
 
 //Food
 item.medkit.name=Medkit

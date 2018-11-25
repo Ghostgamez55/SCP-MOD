@@ -24,7 +24,6 @@ public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
-	public static final Block ROUGH_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "rough_concrete");
 	public static final Block CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "concrete");
 	public static final Block DARK_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "dark_concrete");
 	public static final Block BRIEFCASE_OPEN = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_open");
