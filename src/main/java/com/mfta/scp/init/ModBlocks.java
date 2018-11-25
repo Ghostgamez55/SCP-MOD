@@ -24,6 +24,7 @@ public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
+	//blocks
 	public static final Block CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "concrete");
 	public static final Block DARK_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "dark_concrete");
 	public static final Block BRIEFCASE_OPEN = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_open");
@@ -31,7 +32,11 @@ public class ModBlocks {
 	public static final Block BLACK_AND_WHITE_TILE = setUpBlock(new BlockSCP(Material.ROCK), "black_and_white_tile");
 	public static final Block FACTORY_BLOCK_FULL = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block_full");
 	public static final Block FACTORY_BLOCK = setUpBlock(new BlockFactoryBlock(), "factory_block");
+	public static final Block CONCRETE_BRICK = setUpBlock(new BlockFactoryBlock(), "concrete_brick");
+	public static final Block DARK_CONCRETE_BRICK = setUpBlock(new BlockFactoryBlock(), "dark_concrete_brick");
 	
+	
+	//3d model blocks
 	public static final Block STONE_TOILET = setUpBlock(new BlockSCP(Material.ANVIL), "stone_toilet");
 	public static final Block MARBLE_SHELF = setUpBlock(new BlockSCP(Material.ANVIL), "marble_shelf");
 	public static final Block HANGING_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "hanging_lamp").setLightLevel(1.0F);

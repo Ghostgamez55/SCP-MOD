@@ -4,14 +4,18 @@ item.hungry_bag.name=Hungry Bag
 //Blocks
 tile.concrete.name=Concrete
 tile.dark_concrete.name=Dark Concrete
-tile.briefcase_closed.name=Closed Briefcase
-tile.briefcase_open.name=Opened Briefcase
 tile.black_and_white_tile.name=Black And White Tile
 tile.factory_block_full.name=Factory Block Full
 tile.factory_block.name=Factory Block
+tile.concrete_brick.name=Concrete Brick
+tile.dark_concrete_brick.name=Dark Concrete Brick
+
+//3d model blocks
 tile.stone_toilet.name=Stone Toilet
 tile.marble_shelf.name=Marble Shelf
 tile.hanging_lamp.name=Hanging lamp
+tile.briefcase_closed.name=Closed Briefcase
+tile.briefcase_open.name=Opened Briefcase
 
 //entitys
 entity.Billy.name=Billy
