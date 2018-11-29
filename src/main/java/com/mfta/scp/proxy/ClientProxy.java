@@ -1,5 +1,6 @@
 package com.mfta.scp.proxy;
 
+import com.mfta.scp.client.model.armor.ModelHazmatSuit;
 import com.mfta.scp.client.model.armor.ModelSCPArmor;
 import com.mfta.scp.client.render.RenderBigFoot;
 import com.mfta.scp.client.render.RenderBilly;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 public class ClientProxy extends CommonProxy {
 	
 	private static final ModelSCPArmor SCP_ARMOR = new ModelSCPArmor();
+	private static final ModelHazmatSuit HAZMAT = new ModelHazmatSuit();
 	
 	@Override
 	public void registerRenders() {
@@ -31,6 +33,14 @@ public class ClientProxy extends CommonProxy {
 					return SCP_ARMOR;
 				case 1:
 					return SCP_ARMOR;
+			}
+		}
+		else if (ID == ModItems.HAZMAT_ARMOR) {
+			switch(type) {
+				case 0:
+					return HAZMAT;
+				case 1:
+					return HAZMAT;
 			}
 		}
 		return null;

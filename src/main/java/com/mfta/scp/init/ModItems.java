@@ -34,8 +34,9 @@ public class ModItems {
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 	
 	public static final ArmorMaterial SCP = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
+	public static final ArmorMaterial HAZMAT = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
 	
-	public static final int SCP_ARMOR = 0;
+	public static final int SCP_ARMOR = 0, HAZMAT_ARMOR = 1;
 	
 	//bags
 	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag").setMaxStackSize(1);
@@ -59,6 +60,10 @@ public class ModItems {
 //	public static final Item SCP_ARMOR_LEGS = setUpItem(new ItemSpecialArmor(SCP_ARMOR, SCP, 1, EntityEquipmentSlot.LEGS), "scp_armor_legs");
 //	public static final Item SCP_ARMOR_BOOTS = setUpItem(new ItemSpecialArmor(SCP_ARMOR, SCP, 0, EntityEquipmentSlot.FEET), "scp_armor_boots");
 	
+	public static final Item HAZMAT_HEAD = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.HEAD), "hazmat_head");
+	public static final Item HAZMAT_CHEST = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.CHEST), "hazmat_chest");
+	public static final Item HAZMAT_LEGS = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 1, EntityEquipmentSlot.LEGS), "hazmat_legs");
+	public static final Item HATMAT_BOOTS = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.FEET), "hazmat_boots");
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> e) {
