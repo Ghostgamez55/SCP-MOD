@@ -1,9 +1,72 @@
 
 {
-	"neck_snap": { 
-		"category": "ambient", 
+	"neck_snap": {
+		"category": "ambient",
 		"sounds":[
 			{"name": "scpmod:neck_snap", "stream": true}
+		]
+	},
+	"ambient_forest": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:ambient_forest",
+				"stream": true
+			}
+		]
+	},
+	"ambient_cave": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:ambient_cave",
+				"stream": true
+			}
+		]
+	},
+	"scp_scream": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:scp_scream",
+				"stream": true
+			}
+		]
+	},
+	"radio_1": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:radio_1",
+				"stream": true
+			}
+		]
+	},
+	"radio_2": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:radio_2",
+				"stream": true
+			}
+		]
+	},
+	"radio_3": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:radio_3",
+				"stream": true
+			}
+		]
+	},
+	"radio_4": {
+		"category": "ambient",
+		"sounds": [
+			{
+				"name": "scpmod:radio_4",
+				"stream": true
+			}
 		]
 	}
 	

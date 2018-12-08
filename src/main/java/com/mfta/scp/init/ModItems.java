@@ -1,17 +1,10 @@
 package com.mfta.scp.init;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.mfta.scp.Reference;
-import com.mfta.scp.init.items.ItemSpecialArmor;
-import com.mfta.scp.init.items.ItemFlareGun;
-import com.mfta.scp.init.items.ItemHungryBag;
-import com.mfta.scp.init.items.ItemSCP;
+import com.mfta.scp.init.items.*;
 import com.mfta.scp.init.items.food.FoodBase;
 import com.mfta.scp.init.items.food.FoodEfectBase;
 import com.mfta.scp.tabs.SCPTabs;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -27,6 +20,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class ModItems {
@@ -64,6 +60,8 @@ public class ModItems {
 	public static final Item HAZMAT_CHEST = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.CHEST), "hazmat_chest");
 	public static final Item HAZMAT_LEGS = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 1, EntityEquipmentSlot.LEGS), "hazmat_legs");
 	public static final Item HATMAT_BOOTS = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.FEET), "hazmat_boots");
+	
+	public static final Item STUN_ROD = setUpItem(new ItemStunRod(), "stun_rod");
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> e) {

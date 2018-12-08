@@ -40,6 +40,10 @@ public class ModBlocks {
 	public static final Block STONE_TOILET = setUpBlock(new BlockSCP(Material.ANVIL), "stone_toilet");
 	public static final Block MARBLE_SHELF = setUpBlock(new BlockSCP(Material.ANVIL), "marble_shelf");
 	public static final Block HANGING_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "hanging_lamp").setLightLevel(1.0F);
+	public static final Block SMALL_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "small_lamp").setLightLevel(1.0F);
+	
+	//TODO THIS WILL NEED A TILE, IT PLAYS AUDIO AND DOES A LOT MORE THAN JUST SIT THERE
+	public static final Block RADIO = setUpBlock(new BlockSCP(Material.ANVIL), "radio");
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> e) {

@@ -5,8 +5,6 @@ import com.mfta.scp.event.SCPCommonHandler;
 import com.mfta.scp.gui.GuiHandler;
 import com.mfta.scp.init.ModEntities;
 import com.mfta.scp.init.dimension.SCPDimensions;
-import com.mfta.scp.init.sounds.ModSounds;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,8 +41,7 @@ public class CommonProxy {
 		SCPDimensions.init();
 	}
 	
-	public void init(FMLInitializationEvent event) {		
-		ModSounds.registerSounds();
+	public void init(FMLInitializationEvent event) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCPMain.instance, new GuiHandler());
 	}
 	
