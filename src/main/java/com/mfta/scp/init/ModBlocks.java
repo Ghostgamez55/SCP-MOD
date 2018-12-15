@@ -1,24 +1,32 @@
 package com.mfta.scp.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mfta.scp.Reference;
 import com.mfta.scp.init.blocks.BlockConcrete;
 import com.mfta.scp.init.blocks.BlockFactoryBlock;
 import com.mfta.scp.init.blocks.BlockReinforced;
 import com.mfta.scp.init.blocks.BlockSCP;
 import com.mfta.scp.tabs.SCPTabs;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber
 public class ModBlocks {
@@ -28,7 +36,21 @@ public class ModBlocks {
 	//blocks
 	public static final Block CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "concrete");
 	public static final Block DARK_CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "dark_concrete");
-	public static final Block BRIEFCASE_OPEN = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_open");
+	public static final Block BRIEFCASE_OPEN = setUpBlock(new BlockSCP(Material.ANVIL) {
+		
+		@Override
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return new AxisAlignedBB(0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
+		}
+		
+		@Override
+		public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World worldIn, BlockPos pos) {
+			return new AxisAlignedBB(0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
+		
+		}
+		
+	}, "briefcase_open");
+	
 	public static final Block BRIEFCASE_CLOSED = setUpBlock(new BlockSCP(Material.ANVIL), "briefcase_closed");
 	public static final Block BLACK_AND_WHITE_TILE = setUpBlock(new BlockSCP(Material.ROCK), "black_and_white_tile");
 	public static final Block FACTORY_BLOCK_FULL = setUpBlock(new BlockSCP(Material.ANVIL), "factory_block_full");
