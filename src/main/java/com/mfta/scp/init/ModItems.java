@@ -48,6 +48,13 @@ public class ModItems {
 	//items
 	public static final Item FLARE_AMMO = setUpItem(new ItemSCP(), "flare_ammo");
 	public static final Item FLARE_GUN = setUpItem(new ItemFlareGun(), "flare_gun");
+	public static final Item SYRINGE = setUpItem(new ItemSCP(), "syringe");
+	public static final Item BLOOD_SYRINGE = setUpItem(new ItemSCP(), "blood_syringe");
+	public static final Item INFECTED_BLOOD_SYRINGE = setUpItem(new ItemSCP(), "infected_blood_syringe");
+	public static final Item WATER_SYRINGE = setUpItem(new ItemSCP(), "water_syringe");
+	
+	//ingots
+	public static final Item REINFORCED_IRON_INGOT = setUpItem(new ItemSCP(), "reinforced_iron_ingot");
 	
 	//armor
 	public static final Item SCP_ARMOR_HEAD = setUpItem(new ItemSpecialArmor(SCP_ARMOR, SCP, 0, EntityEquipmentSlot.HEAD), "scp_armor_head");

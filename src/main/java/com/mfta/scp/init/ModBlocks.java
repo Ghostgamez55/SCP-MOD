@@ -3,6 +3,7 @@ package com.mfta.scp.init;
 import com.mfta.scp.Reference;
 import com.mfta.scp.init.blocks.BlockConcrete;
 import com.mfta.scp.init.blocks.BlockFactoryBlock;
+import com.mfta.scp.init.blocks.BlockReinforced;
 import com.mfta.scp.init.blocks.BlockSCP;
 import com.mfta.scp.tabs.SCPTabs;
 import net.minecraft.block.Block;
@@ -34,6 +35,7 @@ public class ModBlocks {
 	public static final Block FACTORY_BLOCK = setUpBlock(new BlockFactoryBlock(), "factory_block");
 	public static final Block CONCRETE_BRICK = setUpBlock(new BlockFactoryBlock(), "concrete_brick");
 	public static final Block DARK_CONCRETE_BRICK = setUpBlock(new BlockFactoryBlock(), "dark_concrete_brick");
+	public static final Block REINFORCED_IRON_BLOCK = setUpBlock(new BlockReinforced(Material.ANVIL), "reinforced_iron_block");
 	
 	
 	//3d model blocks
@@ -41,6 +43,11 @@ public class ModBlocks {
 	public static final Block MARBLE_SHELF = setUpBlock(new BlockSCP(Material.ANVIL), "marble_shelf");
 	public static final Block HANGING_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "hanging_lamp").setLightLevel(1.0F);
 	public static final Block SMALL_LAMP = setUpBlock(new BlockSCP(Material.ANVIL), "small_lamp").setLightLevel(1.0F);
+	public static final Block ANTIQUE_CUP = setUpBlock(new BlockSCP(Material.ANVIL), "antique_cup");
+	public static final Block ANTIQUE_TABLE = setUpBlock(new BlockSCP(Material.ANVIL), "antique_table");
+	public static final Block ANTIQUECHAIR = setUpBlock(new BlockSCP(Material.ANVIL), "antiquechair");
+	public static final Block ANTIQUEWARDORBE = setUpBlock(new BlockSCP(Material.ANVIL), "antiquewardrobe");
+	public static final Block ANTIQUEDRAWER = setUpBlock(new BlockSCP(Material.ANVIL), "antiquedrawer");
 	
 	//TODO THIS WILL NEED A TILE, IT PLAYS AUDIO AND DOES A LOT MORE THAN JUST SIT THERE
 	public static final Block RADIO = setUpBlock(new BlockSCP(Material.ANVIL), "radio");
