@@ -1,5 +1,9 @@
 //Items
 item.hungry_bag.name=Hungry Bag
+item.syringe.name=Syringe
+item.blood_syringe.name=Blood Syringe
+item.infected_blood_syringe.name=Infected Blood Syringe
+item.water_syringe.name=Water Syringe
 
 //Blocks
 tile.concrete.name=Concrete
@@ -9,6 +13,7 @@ tile.factory_block_full.name=Factory Block Full
 tile.factory_block.name=Factory Block
 tile.concrete_brick.name=Concrete Brick
 tile.dark_concrete_brick.name=Dark Concrete Brick
+tile.reinfored_iron_block.name-Reinforced Iron Block
 
 //3d model blocks
 tile.stone_toilet.name=Stone Toilet
@@ -16,6 +21,13 @@ tile.marble_shelf.name=Marble Shelf
 tile.hanging_lamp.name=Hanging lamp
 tile.briefcase_closed.name=Closed Briefcase
 tile.briefcase_open.name=Opened Briefcase
+tile.antique_cup.name= Antique Cup
+tile.antique_table.name=Antique Table
+tile.antiquechair.name=Antique Chair
+tile.antiquewardrobe.name=Antique Wardrobe
+tile.antiquedrawer.name=Antique Drawer
+tile.radio.name=Radio
+tile.small_lamp.name=Small Lamp
 
 //entitys
 entity.Billy.name=Billy
@@ -34,3 +46,6 @@ item.infected_chicken.name=Infected Chicken
 item.infected_mutton.name=Infected Mutton
 item.infected_porkchop.name=Infected Porkchop
 item.infected_rabbit_raw.name=Infected Rabbit Raw
+
+//ingots
+item.reinforced_iron_ingot.name=Reinforced Iron Ingot
