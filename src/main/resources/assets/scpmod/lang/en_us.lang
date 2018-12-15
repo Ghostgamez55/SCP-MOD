@@ -49,3 +49,10 @@ item.infected_rabbit_raw.name=Infected Rabbit Raw
 
 //ingots
 item.reinforced_iron_ingot.name=Reinforced Iron Ingot
+
+//Book
+//Change following to more appropriate things
+guide.scpmod.title=SCP Guide
+guide.scpmod.display=SCP Guide
+guide.scpmod.author=Dr. Bright
+guide.scpmod.welcome=SCPs: What you need to know

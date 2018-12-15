@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, dependencies = "before:guideapi")
 public class SCPMain {
 	
 	public static final Logger logger = Logger.getLogger(SCPMain.class.getName());
