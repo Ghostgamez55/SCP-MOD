@@ -25,6 +25,7 @@ import amerifrance.guideapi.entry.EntryItemStack;
 import amerifrance.guideapi.page.PageText;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -44,7 +45,7 @@ public class SCPGuide implements IGuideBook {
 		
 		//SCP-173 Entry
 		List<IPage> pages173 = new ArrayList<>();
-		pages173.add(new PageText("lorem ipsum dolor sit amet"));
+		pages173.add(new PageText("§lItem #: §rSCP-173"));
 		entityEntries.put(new ResourceLocation(Reference.MOD_ID, "/book/entry_173"), new EntryItemStack(pages173, "SCP-173", new ItemStack(ModBlocks.CONCRETE)));
 		
 		//Hungry Bag entry
@@ -55,8 +56,8 @@ public class SCPGuide implements IGuideBook {
 		
 		//Setup list of categories and add entries to it.
 		List<CategoryAbstract> categories = new ArrayList<>();
-		categories.add(new CategoryItemStack(entityEntries, "Entity/Beast SCPs", new ItemStack(ModItems.MEDKIT)));
-		categories.add(new CategoryItemStack(itemEntries, "Item SCPs", new ItemStack(ModItems.HUNGRY_BAG)));
+		categories.add(new CategoryItemStack(entityEntries, "guide.entity.category.name", new ItemStack(ModItems.MEDKIT)));
+		categories.add(new CategoryItemStack(itemEntries, "guide.item.category.name", new ItemStack(ModItems.HUNGRY_BAG)));
 		
 		
 		//Book's base info. I *know* that Book is deprecated, but I can't be bothered to scour the internet for docs. Plus, this won't be removed 'till 1.13.
@@ -88,8 +89,8 @@ public class SCPGuide implements IGuideBook {
 	public void handlePost(ItemStack bookStack) {
 		
 		//Register a recipe so players can obtain the book
-		//GameRegistry.addShapelessRecipe(null, null, bookStack, new Ingredient(new ItemStack(Items.BOOK), ));
+		GameRegistry.addShapedRecipe(name, group, output, params);
 	}
 	*/
-
 }
+
