@@ -69,6 +69,7 @@ public class ModItems {
 	public static final Item HATMAT_BOOTS = setUpItem(new ItemSpecialArmor(HAZMAT_ARMOR, HAZMAT, 0, EntityEquipmentSlot.FEET), "hazmat_boots");
 	
 	public static final Item STUN_ROD = setUpItem(new ItemStunRod(), "stun_rod");
+
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> e) {

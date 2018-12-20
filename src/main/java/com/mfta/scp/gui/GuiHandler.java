@@ -1,11 +1,15 @@
 package com.mfta.scp.gui;
 
+import com.mfta.scp.Reference;
 import com.mfta.scp.SCPMain;
+import com.mfta.scp.gui.client.GuiCoalGenerator;
 import com.mfta.scp.gui.client.GuiScreenHungryBag;
+import com.mfta.scp.gui.container.ContainerCoalGenerator;
 import com.mfta.scp.gui.container.ContainerHungryBag;
 import com.mfta.scp.gui.container.ContainerHungryBagInventory;
 import com.mfta.scp.init.items.ItemHungryBag;
 import com.mfta.scp.proxy.CommonProxy;
+import com.mfta.scp.tileentity.TileEntityCoalGenerator;
 
 import net.minecraft.client.gui.inventory.GuiScreenHorseInventory;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,6 +31,7 @@ public class GuiHandler implements IGuiHandler {
 		TileEntity tile_entity = world.getTileEntity(new BlockPos(x, y, z));	
 		if(ID == CommonProxy.GUI.HUNGRY_BAG.id)
 			return new ContainerHungryBagInventory(player.inventory, ((ItemHungryBag)player.getHeldItemMainhand().getItem()).inventory, player);
+		if(ID == Reference.GUI_COAL_GENERATOR) return new ContainerCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
 		return null;
 	}
 
@@ -36,6 +41,7 @@ public class GuiHandler implements IGuiHandler {
 
 		if(ID == CommonProxy.GUI.HUNGRY_BAG.id)
 			return new GuiScreenHungryBag(player.inventory, ((ItemHungryBag)player.getHeldItemMainhand().getItem()).inventory);
+		if(ID == Reference.GUI_COAL_GENERATOR) return new GuiCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
 
 		return null;
 	}

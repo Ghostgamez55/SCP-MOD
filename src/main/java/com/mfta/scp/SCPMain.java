@@ -1,5 +1,6 @@
 package com.mfta.scp;
 
+import java.rmi.registry.RegistryHandler;
 import java.util.logging.Logger;
 
 import com.mfta.scp.proxy.CommonProxy;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, dependencies = "before:guideapi")
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 public class SCPMain {
 	
 	public static final Logger logger = Logger.getLogger(SCPMain.class.getName());
@@ -30,7 +31,8 @@ public class SCPMain {
 	}
 
 	@EventHandler
-	public static void init(FMLInitializationEvent event) {
+	public static void init(FMLInitializationEvent event)
+	{
 		proxy.init(event);
 	}
 
