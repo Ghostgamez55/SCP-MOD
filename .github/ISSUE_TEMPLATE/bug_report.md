@@ -1,5 +1,14 @@
-#### Issue description:
+---
+name: Bug report
+about: Report an issue
+title: ''
+labels: ''
+assignees: ''
 
+---
+
+#### Issue description:
+\[...\]
 
 #### Steps to reproduce:
 1.
