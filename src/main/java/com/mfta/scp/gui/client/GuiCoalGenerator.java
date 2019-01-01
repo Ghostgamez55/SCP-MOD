@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiCoalGenerator extends GuiContainer
 {
-	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/coal_generator.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + "textures/gui/coal_generator.png");
 	private final InventoryPlayer player;
 	private final TileEntityCoalGenerator tileentity;
 	

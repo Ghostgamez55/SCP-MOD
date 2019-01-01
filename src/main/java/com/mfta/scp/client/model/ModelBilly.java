@@ -17,7 +17,8 @@ public class ModelBilly extends ModelBase {
     public ModelRenderer rightbottomleg;
 
     public ModelBilly() {
-        this.textureWidth = 130;
+        
+    	this.textureWidth = 130;
         this.textureHeight = 130;
         this.midsection = new ModelRenderer(this, 48, 62);
         this.midsection.setRotationPoint(0.0F, 9.0F, 0.4F);
@@ -56,6 +57,7 @@ public class ModelBilly extends ModelBase {
         this.midsection.addChild(this.lefttopleg);
         this.midsection.addChild(this.righttopleg);
         this.lefttopleg.addChild(this.leftbottomleg);
+    
     }
 
     @Override
@@ -64,8 +66,10 @@ public class ModelBilly extends ModelBase {
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
+        
+    	modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
+    
     }
 }

@@ -28,20 +28,28 @@ public class GuiHandler implements IGuiHandler {
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		
 		TileEntity tile_entity = world.getTileEntity(new BlockPos(x, y, z));	
+		
 		if(ID == CommonProxy.GUI.HUNGRY_BAG.id)
 			return new ContainerHungryBagInventory(player.inventory, ((ItemHungryBag)player.getHeldItemMainhand().getItem()).inventory, player);
-		if(ID == Reference.GUI_COAL_GENERATOR) return new ContainerCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
+		
+		if(ID == Reference.GUI_COAL_GENERATOR) 
+			return new ContainerCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
+		
 		return null;
 	}
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		
 		TileEntity tile_entity = world.getTileEntity(new BlockPos(x, y, z));
 
 		if(ID == CommonProxy.GUI.HUNGRY_BAG.id)
 			return new GuiScreenHungryBag(player.inventory, ((ItemHungryBag)player.getHeldItemMainhand().getItem()).inventory);
-		if(ID == Reference.GUI_COAL_GENERATOR) return new GuiCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
+		
+		if(ID == Reference.GUI_COAL_GENERATOR) 
+			return new GuiCoalGenerator(player.inventory, (TileEntityCoalGenerator)world.getTileEntity(new BlockPos(x,y,z)));
 
 		return null;
 	}

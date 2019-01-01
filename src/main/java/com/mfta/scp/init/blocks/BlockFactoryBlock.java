@@ -12,8 +12,10 @@ public class BlockFactoryBlock extends Block {
 	public BlockFactoryBlock() {
 		
 		super(Material.ANVIL);		
+		
 		this.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 		this.translucent = true;
+	
 	}
 	
 	public BlockRenderLayer getRenderLayer() {

@@ -21,22 +21,29 @@ import net.minecraftforge.event.ForgeEventFactory;
 public class ItemFlareGun extends Item {
 	
 	public ItemFlareGun() {
+		
 		this.maxStackSize = 1;
 		this.setMaxDamage(384);
+	
 	}
 	
 	private ItemStack findAmmo(EntityPlayer player) {
+		
 		if (this.isAmmo(player.getHeldItem(EnumHand.OFF_HAND))) {
 			return player.getHeldItem(EnumHand.OFF_HAND);
+		
 		} else if (this.isAmmo(player.getHeldItem(EnumHand.MAIN_HAND))) {
 			return player.getHeldItem(EnumHand.MAIN_HAND);
+		
 		} else {
 			for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
+				
 				ItemStack itemstack = player.inventory.getStackInSlot(i);
 				
 				if (this.isAmmo(itemstack)) {
 					return itemstack;
 				}
+			
 			}
 			
 			return ItemStack.EMPTY;
@@ -49,16 +56,20 @@ public class ItemFlareGun extends Item {
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
+		
 		if (entityLiving instanceof EntityPlayer) {
+			
 			EntityPlayer entityplayer = (EntityPlayer) entityLiving;
 			boolean flag = entityplayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0;
 			ItemStack itemstack = this.findAmmo(entityplayer);
 			
 			int i = this.getMaxItemUseDuration(stack) - timeLeft;
 			i = ForgeEventFactory.onArrowLoose(stack, worldIn, entityplayer, i, !itemstack.isEmpty() || flag);
+			
 			if (i < 0) return;
 			
 			if (!itemstack.isEmpty() || flag) {
+				
 				if (itemstack.isEmpty()) {
 					itemstack = new ItemStack(ModItems.FLARE_AMMO);
 				}
@@ -66,25 +77,33 @@ public class ItemFlareGun extends Item {
 				float f = 1.0F;
 				
 				if (f >= 0.1D) {
+					
 					boolean flag1 = entityplayer.capabilities.isCreativeMode || isAmmo(itemstack);
 					
 					if (!worldIn.isRemote) {
+						
 						EntityFlare entityFlare = new EntityFlare(worldIn, entityplayer, new Vec3d(1, 0, 0));
+						
 						if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, stack) > 0) {
 							entityFlare.setFire(100);
 						}
+						
 						stack.damageItem(1, entityplayer);
 						
 						worldIn.spawnEntity(entityFlare);
+					
 					}
 					
 					worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_FIREWORK_LARGE_BLAST_FAR, SoundCategory.PLAYERS, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+					
 					if (!flag1 && !entityplayer.capabilities.isCreativeMode) {
+						
 						itemstack.shrink(1);
 						
 						if (itemstack.isEmpty()) {
 							entityplayer.inventory.deleteStack(itemstack);
 						}
+					
 					}
 				}
 			}

@@ -1,10 +1,18 @@
 package com.mfta.scp.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mfta.scp.Reference;
-import com.mfta.scp.init.items.*;
+import com.mfta.scp.init.items.ItemFlareGun;
+import com.mfta.scp.init.items.ItemHungryBag;
+import com.mfta.scp.init.items.ItemSCP;
+import com.mfta.scp.init.items.ItemSpecialArmor;
+import com.mfta.scp.init.items.ItemStunRod;
 import com.mfta.scp.init.items.food.FoodBase;
-import com.mfta.scp.init.items.food.FoodEfectBase;
+import com.mfta.scp.init.items.food.FoodEffectBase;
 import com.mfta.scp.tabs.SCPTabs;
+
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -21,29 +29,41 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class ModItems {
 	
-	public static final List<Item> ITEMS = new ArrayList<Item>();
+	public static final List<Item> ITEMS = new ArrayList<Item>(30);
 	
-	public static final ArmorMaterial SCP = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
-	public static final ArmorMaterial HAZMAT = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
+	
+	public static final ArmorMaterial SCP = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, 
+			new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
+	
+	public static final ArmorMaterial HAZMAT = EnumHelper.addArmorMaterial("scp", Reference.MOD_ID + ":scp", 33, 
+			new int[]{4, 7, 9, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F);
 	
 	public static final int SCP_ARMOR = 0, HAZMAT_ARMOR = 1;
+	
 	
 	//bags
 	public static final Item HUNGRY_BAG = setUpItem(new ItemHungryBag(), "hungry_bag").setMaxStackSize(1);
 	
 	//food
 	public static final Item MEDKIT = setUpItem(new FoodBase(20, 5f, false), "medkit");
-	public static final Item INFECTED_BEEF = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_beef");
-	public static final Item INFECTED_CHICKEN = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_chicken");
-	public static final Item INFECTED_RABBIT_RAW = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_rabbit_raw");
-	public static final Item INFECTED_MUTTON = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_mutton");
-	public static final Item INFECTED_PORKCHOP = setUpItem(new FoodEfectBase(0, 0f, false, new PotionEffect(MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_porkchop");
+	
+	public static final Item INFECTED_BEEF = setUpItem(new FoodEffectBase(0, 0f, false, new PotionEffect(
+			MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_beef");
+	
+	public static final Item INFECTED_CHICKEN = setUpItem(new FoodEffectBase(0, 0f, false, new PotionEffect(
+			MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_chicken");
+	
+	public static final Item INFECTED_RABBIT_RAW = setUpItem(new FoodEffectBase(0, 0f, false, new PotionEffect(
+			MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_rabbit_raw");
+	
+	public static final Item INFECTED_MUTTON = setUpItem(new FoodEffectBase(0, 0f, false, new PotionEffect(
+			MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_mutton");
+	
+	public static final Item INFECTED_PORKCHOP = setUpItem(new FoodEffectBase(0, 0f, false, new PotionEffect(
+			MobEffects.HUNGER, (60 * 20), 2, false, true)), "infected_porkchop");
 	
 	//items
 	public static final Item FLARE_AMMO = setUpItem(new ItemSCP(), "flare_ammo");
@@ -79,17 +99,22 @@ public class ModItems {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent e) {
+		
 		for (Item itm : ITEMS) {
 			ModelLoader.setCustomModelResourceLocation(itm, 0, new ModelResourceLocation(itm.getRegistryName(), "inventory"));
 		}
 	}
 	
 	private static Item setUpItem(Item item, String name) {
+		
 		item.setRegistryName(Reference.MOD_ID, name);
 		item.setTranslationKey(name);
 		item.setCreativeTab(SCPTabs.SCP_TAB_ITEMS);
+		
 		ITEMS.add(item);
+		
 		return item;
+	
 	}
 	
 }

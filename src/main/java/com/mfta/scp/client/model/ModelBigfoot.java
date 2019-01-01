@@ -9,27 +9,35 @@ import net.minecraft.entity.Entity;
  * Created using Tabula 7.0.0
  */
 public class ModelBigfoot extends ModelBase {
-    public ModelRenderer maintorso;
+    
+	public ModelRenderer maintorso;
     public ModelRenderer midsection;
+    public ModelRenderer waist;
     public ModelRenderer head;
+    
     public ModelRenderer leftpeck;
     public ModelRenderer rightpeck;
+    
     public ModelRenderer leftshoulder;
     public ModelRenderer rightshoulder;
-    public ModelRenderer waist;
+    
     public ModelRenderer topleftleg;
     public ModelRenderer righttopleg;
-    public ModelRenderer bottomleg;
-    public ModelRenderer leftfoot;
     public ModelRenderer rightbottomleg;
+    public ModelRenderer bottomleg;
+    
+    public ModelRenderer leftfoot;
     public ModelRenderer rightfoot;
+    
     public ModelRenderer leftarm;
-    public ModelRenderer shape18;
     public ModelRenderer rightarm;
+    
+    public ModelRenderer shape18;
     public ModelRenderer shape18_1;
 
     public ModelBigfoot() {
-        this.textureWidth = 130;
+        
+    	this.textureWidth = 130;
         this.textureHeight = 130;
         this.shape18_1 = new ModelRenderer(this, 69, 108);
         this.shape18_1.setRotationPoint(0.0F, 13.9F, 0.0F);
@@ -109,6 +117,7 @@ public class ModelBigfoot extends ModelBase {
         this.waist.addChild(this.righttopleg);
         this.maintorso.addChild(this.rightshoulder);
         this.topleftleg.addChild(this.bottomleg);
+    
     }
 
     @Override
@@ -120,8 +129,10 @@ public class ModelBigfoot extends ModelBase {
      * This is a helper function from Tabula to set the rotation of model parts
      */
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
+        
+    	modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
+    
     }
 }

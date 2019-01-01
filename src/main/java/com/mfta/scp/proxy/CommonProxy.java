@@ -20,15 +20,18 @@ public class CommonProxy {
 		
 		public final int id;
 		
-		GUI(){
+		GUI() {
+			
 			this.id = getNextId();
+		
 		}
 
 		static int count = 0;
 
-		private static int getNextId(){
-			return count++;
+		private static int getNextId() {
+			return count++;	
 		}
+	
 	}
 	
 	public ModelBiped getArmorModel(int ID, int type) {
@@ -36,9 +39,11 @@ public class CommonProxy {
 	}
 	
 	public void preInit(FMLPreInitializationEvent event) {
+		
 		ModEntities.registerEntity();
 		MinecraftForge.EVENT_BUS.register(new SCPCommonHandler());
 		SCPDimensions.init();
+	
 	}
 	
 	public void init(FMLInitializationEvent event) {

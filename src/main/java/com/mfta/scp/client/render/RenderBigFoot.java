@@ -28,6 +28,7 @@ public class RenderBigFoot extends RenderLiving<EntityBigFoot>
     }
     
 	public static class RenderFactory implements IRenderFactory<EntityBigFoot>{
+		
 		@Override
 		public Render<? super EntityBigFoot> createRenderFor(RenderManager manager) {
 			return new RenderBigFoot(manager);

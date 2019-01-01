@@ -20,29 +20,40 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void registerRenders() {
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBigFoot.class, new RenderBigFoot.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBilly.class, new RenderBilly.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityFlare.class, RenderFlareProjectile::new);
+	
 	}
 
 	@Override
 	public ModelBiped getArmorModel(int ID, int type) {
+		
 		if(ID == ModItems.SCP_ARMOR) {
+			
 			switch(type) {
+				
 				case 0:
 					return SCP_ARMOR;
+				
 				case 1:
 					return SCP_ARMOR;
 			}
 		}
+		
 		else if (ID == ModItems.HAZMAT_ARMOR) {
+			
 			switch(type) {
+				
 				case 0:
 					return HAZMAT;
+				
 				case 1:
 					return HAZMAT;
 			}
 		}
+		
 		return null;
 	} 
 }

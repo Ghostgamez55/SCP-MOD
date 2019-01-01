@@ -16,30 +16,44 @@ public class ItemSpecialArmor extends ItemArmor{
 	private int ID;
 	
 	public ItemSpecialArmor(int ID, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
+		
 		super(materialIn, renderIndexIn, equipmentSlotIn);
+		
 		this.ID = ID;
 		this.setCreativeTab(SCPTabs.SCP_TAB_ITEMS);
+	
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default) {
+		
 		if(itemStack != null) {
+			
 			if(itemStack.getItem() instanceof ItemArmor) {
+				
 				EntityEquipmentSlot type = ((ItemArmor)itemStack.getItem()).armorType;
 				ModelBiped armorModel = null;
 				
 				switch(type) {
+					
 					case HEAD:
 					case LEGS:
+						
 						armorModel = SCPMain.proxy.getArmorModel(ID, 0);
 						break;
+					
+					
 					case FEET:
 					case CHEST:
+						
 						armorModel = SCPMain.proxy.getArmorModel(ID, 1);
 						break;
+					
+					
 					default:
 						break;
+				
 				}
 				
 				armorModel.bipedHead.showModel = armorSlot == EntityEquipmentSlot.HEAD;
@@ -57,6 +71,7 @@ public class ItemSpecialArmor extends ItemArmor{
 				return armorModel;
 			}
 		}
+		
 		return null;
 	}
 	

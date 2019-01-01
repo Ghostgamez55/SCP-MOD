@@ -19,7 +19,7 @@ public class RenderBilly extends RenderLiving<EntityBilly>
 
     public RenderBilly(RenderManager m)
     {
-        super(m, new ModelBilly(), 0.6F);
+    	super(m, new ModelBilly(), 0.6F);
     }
     
     protected ResourceLocation getEntityTexture(EntityBilly entity)
@@ -27,8 +27,9 @@ public class RenderBilly extends RenderLiving<EntityBilly>
     	return NORMAL;
     }
     
-	public static class RenderFactory implements IRenderFactory<EntityBilly>{
-		@Override
+    public static class RenderFactory implements IRenderFactory<EntityBilly> {
+		
+    	@Override
 		public Render<? super EntityBilly> createRenderFor(RenderManager manager) {
 			return new RenderBilly(manager);
 		}

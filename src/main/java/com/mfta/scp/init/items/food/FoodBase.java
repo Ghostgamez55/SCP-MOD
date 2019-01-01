@@ -7,9 +7,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class FoodBase extends ItemFood {
+	
 	public FoodBase(int amount, float saturation, boolean isAnimalFood) {
+		
 		super(amount, saturation, isAnimalFood);
+		
 		setCreativeTab(SCPTabs.SCP_TAB_ITEMS);
+	
 	}
 	
 }

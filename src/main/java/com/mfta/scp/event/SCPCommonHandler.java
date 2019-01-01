@@ -11,9 +11,12 @@ public class SCPCommonHandler {
 	@SubscribeEvent
 	public void onSpawn(LivingSpawnEvent e) {
 		if(e.getEntity() instanceof EntityZombie) {
+			
 			EntityZombie zombie = (EntityZombie)e.getEntity();
 			zombie.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(zombie, EntityAnimal.class, true));
+		
 		}
+	
 	}
 
 	

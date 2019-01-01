@@ -18,6 +18,7 @@ public class SCPTabs {
 		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
+	
 	};
 	
 	public static CreativeTabs SCP_TAB_ITEMS = new CreativeTabs("scptabitems") {
@@ -31,6 +32,7 @@ public class SCPTabs {
 		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
+	
 	};
 	
 	public static CreativeTabs SCP_TAB_MISCELLANEOUS = new CreativeTabs("scptabmiscellaneous") {
@@ -44,6 +46,7 @@ public class SCPTabs {
 		public ItemStack createIcon() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.FACTORY_BLOCK));
 		}
+	
 	};
 	
 }

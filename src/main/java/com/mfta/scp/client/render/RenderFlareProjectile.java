@@ -23,11 +23,13 @@ public class RenderFlareProjectile extends Render<EntityFlare> {
 	
 	@Override
 	public void doRender(EntityFlare entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		
 		RenderHelper.setupRenderLightning();
 		GlStateManager.translate(x, y, z);
 		
 		Vec3d vec1 = new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ);
 		Vec3d vec2 = new Vec3d(entity.posX, entity.posY, entity.posZ);
+		
 		vec1 = vec2.subtract(vec1);
 		vec2 = vec2.subtract(vec2);
 		vec1 = vec1.normalize();
@@ -36,14 +38,17 @@ public class RenderFlareProjectile extends Render<EntityFlare> {
 		double y_ = vec2.y - vec1.y;
 		double z_ = vec2.z - vec1.z;
 		double diff = MathHelper.sqrt(x_ * x_ + z_ * z_);
+		
 		float yaw = (float) (Math.atan2(z_, x_) * 180.0D / 3.141592653589793D) - 90.0F;
 		float pitch = (float) -(Math.atan2(y_, diff) * 180.0D / 3.141592653589793D);
+		
 		GlStateManager.rotate(-yaw, 0.0F, 1.0F, 0.0F);
 		GlStateManager.rotate(pitch, 1.0F, 0.0F, 0.0F);
 		
 		RenderHelper.drawGlowingLine(Vec3d.ZERO, new Vec3d(0, 0, 1), 0.5F, entity.color);
 		
 		RenderHelper.finishRenderLightning();
+	
 	}
 	
 	@Override

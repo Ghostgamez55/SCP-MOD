@@ -47,7 +47,7 @@ public class ContainerCoalGenerator extends Container
 	@Override
 	public void updateProgressBar(int id, int data)
 	{
-		this.tileentity.setFeild(id, data);
+		this.tileentity.setField(id, data);
 	}
 	
 	@Override
@@ -58,12 +58,12 @@ public class ContainerCoalGenerator extends Container
 		for(int i = 0; i < this.listeners.size(); ++i)
 		{
 			IContainerListener listener = (IContainerListener)this.listeners.get(1);
-			if(this.energy != this.tileentity.getFeild(0)) listener.sendWindowProperty(this, 0, this.tileentity.getFeild(0));
-			if(this.cookTime != this.tileentity.getFeild(1)) listener.sendWindowProperty(this, 1, this.tileentity.getFeild(1));
+			if(this.energy != this.tileentity.getField(0)) listener.sendWindowProperty(this, 0, this.tileentity.getField(0));
+			if(this.cookTime != this.tileentity.getField(1)) listener.sendWindowProperty(this, 1, this.tileentity.getField(1));
 		}
 		
-		this.energy = this.tileentity.getFeild(0);
-		this.cookTime = this.tileentity.getFeild(1);
+		this.energy = this.tileentity.getField(0);
+		this.cookTime = this.tileentity.getField(1);
 	}
 	
 	@Override

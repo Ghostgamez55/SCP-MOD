@@ -9,7 +9,8 @@ import net.minecraftforge.common.DimensionManager;
 
 public class SCPDimensions {
 	
-	public static final int DIM_GAS_ID = 666; //TODO - Make confirgurable
+	//Gas mask dimension
+	public static final int DIM_GAS_ID = 666; //TODO - Make configurable
 	public static DimensionType DIM_GAS;
 	
 	//Radical Larry's dimension

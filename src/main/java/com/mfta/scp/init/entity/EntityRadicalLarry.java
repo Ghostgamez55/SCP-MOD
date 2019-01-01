@@ -39,6 +39,7 @@ public class EntityRadicalLarry extends EntityMob {
 	public void onLivingUpdate() {
 		
 		Random rand = new Random();
+		
 		while (!stalking) {
 			
 			int r = rand.nextInt(1000) + 1;
@@ -49,14 +50,13 @@ public class EntityRadicalLarry extends EntityMob {
 			}
 		}
 		
-		SCPMain.logger.log(Level.SEVERE, "Radical Larry is stalking.");
+		//SCPMain.logger.log(Level.SEVERE, "Radical Larry is stalking.");
 		
 		
 		
 	}
-
+	
 	private EntityAIBase EntityTeleportPlayer(EntityRadicalLarry entityRadicalLarry) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -26,10 +26,13 @@ public class ModSounds {
 
 	
 	private static SoundEvent registerSound(String s) {
+		
 		ResourceLocation l = new ResourceLocation(Reference.MOD_ID, s);
 		SoundEvent event = new SoundEvent(l);
+		
 		event.setRegistryName(s);
 		SOUND_EVENTS.add(event);
+		
 		return event;
 	}
 	

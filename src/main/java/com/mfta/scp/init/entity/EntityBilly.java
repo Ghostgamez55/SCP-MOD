@@ -16,7 +16,9 @@ public class EntityBilly extends EntityMob {
 	private boolean beingWatched;
 	
 	public EntityBilly(World worldIn) {
+		
 		super(worldIn);
+		
 		this.setSize(1, 2);
 		this.tasks.addTask(1, new EntityAIWander(this, 0.7D));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -24,6 +26,7 @@ public class EntityBilly extends EntityMob {
 		this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.26D, true));
+	
 	}
 	
 	public EntityPlayer getWatcher() {
@@ -38,16 +41,23 @@ public class EntityBilly extends EntityMob {
 	public void onLivingUpdate() {
 
 		if (this.world.getClosestPlayerToEntity(this, 30.0D) instanceof EntityPlayer) {
+			
 			EntityPlayer entityIn = this.world.getClosestPlayerToEntity(this, 30.0D);
         	theWatcher = entityIn;
-            Vec3d vec3d = entityIn.getLook(1.0F).normalize();
+            
+        	Vec3d vec3d = entityIn.getLook(1.0F).normalize();
             Vec3d vec3d1 = new Vec3d(this.posX - entityIn.posX, this.getEntityBoundingBox().minY + (double)this.getEyeHeight() - (entityIn.posY + (double)entityIn.getEyeHeight()), this.posZ - entityIn.posZ);
-			double d0 = vec3d1.length();
+			
+            double d0 = vec3d1.length();
             vec3d1 = vec3d1.normalize();
             double d1 = vec3d.dotProduct(vec3d1);
-			beingWatched = d1 > 1.0D - 0.425D / d0 && entityIn.canEntityBeSeen(this);
+			
+            beingWatched = d1 > 1.0D - 0.425D / d0 && entityIn.canEntityBeSeen(this);
+		
 		}
+		
 		super.onLivingUpdate();
+	
 	}
 
 	@Override
@@ -56,9 +66,12 @@ public class EntityBilly extends EntityMob {
 	}
 	
 	public boolean attackEntityAsMob(Entity e) {
+		
 		this.world.setEntityState(this, (byte) 4);
 		this.playSound(ModSounds.NECK_SNAP, 1.0F, 1.0F);
+		
 		return e.attackEntityFrom(DamageSource.causeMobDamage(this), 25.0F);
+	
 	}
 
 	@Override
@@ -68,9 +81,12 @@ public class EntityBilly extends EntityMob {
 	
 	@Override
 	protected void applyEntityAttributes() {
+		
 		super.applyEntityAttributes();
+		
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.21D);
+	
 	}
 
 }

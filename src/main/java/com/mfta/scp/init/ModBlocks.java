@@ -24,7 +24,7 @@ import java.util.List;
 @Mod.EventBusSubscriber
 public class ModBlocks {
 	
-	public static final List<Block> BLOCKS = new ArrayList<Block>();
+	public static final List<Block> BLOCKS = new ArrayList<Block>(25);
 	
 	//blocks
 	public static final Block CONCRETE = setUpBlock(new BlockConcrete(Material.CLAY), "concrete");
@@ -59,24 +59,34 @@ public class ModBlocks {
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> e) {
+		
 		e.getRegistry().registerAll(BLOCKS.toArray(new Block[BLOCKS.size()]));
+	
 	}
 	
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent e) {
+		
 		for(Block itm : BLOCKS) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(itm), 0, new ModelResourceLocation(itm.getRegistryName(), "inventory"));
+			
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(itm), 0,
+						new ModelResourceLocation(itm.getRegistryName(), "inventory"));
+		
 		}
 	}
 	
 	private static Block setUpBlock(Block block, String name) {
+		
 		block.setRegistryName(Reference.MOD_ID, name);
 		block.setTranslationKey(name);
 		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 		block.setTranslationKey(name);
 		block.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
+		
 		BLOCKS.add(block);
 		ModItems.ITEMS.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		
 		return block;
+	
 	}
 }

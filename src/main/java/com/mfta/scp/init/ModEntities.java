@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 //TODO Update to use Events and Entity Entries
 public class ModEntities {
 
-	private static int id = 0;
+	private static int nextId = 0;
 
 	public static void registerEntity() {
 		createEntity(EntityBilly.class, "Billy", 0x000000, 0x000000);
@@ -23,10 +23,10 @@ public class ModEntities {
 	}
 	
 	private static void createEntity(Class entityClass, String entityName, int prim, int sec) {
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true, prim, sec);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, nextId++, SCPMain.instance, 90, 1, true, prim, sec);
 	}
 	
 	private static void createEntity(Class entityClass, String entityName) {
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id++, SCPMain.instance, 90, 1, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, nextId++, SCPMain.instance, 90, 1, true);
 	}
 }

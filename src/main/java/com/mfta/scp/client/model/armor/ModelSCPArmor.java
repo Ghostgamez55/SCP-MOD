@@ -10,7 +10,8 @@ import net.minecraft.entity.Entity;
  * Created using Tabula 7.0.0
  */
 public class ModelSCPArmor extends ModelBiped {
-    public ModelRenderer frontvest;
+   
+	public ModelRenderer frontvest;
     public ModelRenderer shoulderpadleft;
     public ModelRenderer backvest;
     public ModelRenderer shoulderpadright;
@@ -18,7 +19,8 @@ public class ModelSCPArmor extends ModelBiped {
     public ModelRenderer holsterbag;
 
     public ModelSCPArmor() {
-        this.textureWidth = 130;
+     
+    	this.textureWidth = 130;
         this.textureHeight = 130;
         this.backvest = new ModelRenderer(this, 84, 63);
         this.backvest.setRotationPoint(0.0F, 4.7F, 5.8F);
@@ -47,11 +49,14 @@ public class ModelSCPArmor extends ModelBiped {
         this.bipedHead.addChild(this.shader);
         this.bipedBody.addChild(this.shoulderpadright);
         this.bipedRightLeg.addChild(this.holsterbag);
+    
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
+        
+    	modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
+    
     }
 }

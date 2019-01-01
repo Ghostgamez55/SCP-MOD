@@ -7,19 +7,26 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class FoodEfectBase extends FoodBase {
+public class FoodEffectBase extends FoodBase {
 	PotionEffect effect;
 	
-	public FoodEfectBase(int amount, float saturation, boolean isAnimalFood, PotionEffect effect) {
+	public FoodEffectBase(int amount, float saturation, boolean isAnimalFood, PotionEffect effect) {
+		
 		super(amount, saturation, isAnimalFood);
-		setAlwaysEdible();
+		
+		this.setAlwaysEdible();
 		this.effect = effect;
+	
 	}
 	
 	@Override
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+		
 		if (!worldIn.isRemote) {
-			player.addPotionEffect(new PotionEffect(effect.getPotion(), effect.getDuration(), effect.getAmplifier(), effect.getIsAmbient(), effect.doesShowParticles()));
+			
+			player.addPotionEffect(new PotionEffect(effect.getPotion(), effect.getDuration(), effect.getAmplifier(), 
+					effect.getIsAmbient(), effect.doesShowParticles()));
+		
 		}
 	}
 	

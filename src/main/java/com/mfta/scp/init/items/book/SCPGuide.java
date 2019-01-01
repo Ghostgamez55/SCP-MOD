@@ -36,7 +36,6 @@ public class SCPGuide implements IGuideBook {
 
 	public static Book guide;
 	
-	@SuppressWarnings("resource")
 	@Nonnull
 	@Override
 	public Book buildBook() {

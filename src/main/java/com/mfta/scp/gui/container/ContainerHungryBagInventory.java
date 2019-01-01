@@ -18,12 +18,16 @@ public class ContainerHungryBagInventory extends Container
         int j = -18;
 
         Slot s = new Slot(bagInventoryIn, 3, 44 + 2 * 18, 20) {
+        	
         	@Override
         	public void onSlotChanged() {
+        		
         		bagInventoryIn.clear();
         		super.onSlotChanged();
+        	
         	}
         };
+        
         this.addSlotToContainer(s);
 
         for (int l = 0; l < 3; ++l)

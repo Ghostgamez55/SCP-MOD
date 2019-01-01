@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, dependencies = "before:guideapi") //<- This is needed, please don't delete
 public class SCPMain {
 	
 	public static final Logger logger = Logger.getLogger(SCPMain.class.getName());
@@ -24,15 +24,17 @@ public class SCPMain {
 	@Mod.Instance(Reference.MOD_ID)
 	public static SCPMain instance;
 	
+	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
+		
 		proxy.preInit(event);
 		proxy.registerRenders();
+	
 	}
 
 	@EventHandler
-	public static void init(FMLInitializationEvent event)
-	{
+	public static void init(FMLInitializationEvent event) {
 		proxy.init(event);
 	}
 

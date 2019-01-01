@@ -15,8 +15,11 @@ import net.minecraft.world.World;
 public class BlockSCP extends Block {
 	
 	public BlockSCP(Material material) {
+		
 		super(material);
+		
 		setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
+	
 	}
 
 	public BlockRenderLayer getRenderLayer() {
@@ -33,23 +36,19 @@ public class BlockSCP extends Block {
 		return false;
 	}
 
-	public boolean onBlockActivated(World worldIn, BlockPos pos, BlockSCP SCP, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
-	{	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, BlockSCP SCP, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {	
 		return false;
 	}
 
-	public void breakBlock(World worldIn, BlockPos pos, BlockSCP scp) 
-	{
+	public void breakBlock(World worldIn, BlockPos pos, BlockSCP scp) {
 		
 	}
 
-	public TileEntity createTileEntity(World world, BlockSCP scp) 
-	{
+	public TileEntity createTileEntity(World world, BlockSCP scp) {
 		return null;
 	}
 
-	public boolean hasTileEntity(BlockSCP scp) 
-	{
+	public boolean hasTileEntity(BlockSCP scp) {
 		return false;
 	}
 }

@@ -13,6 +13,7 @@ public class ModelGasMask extends ModelBase {
 	public ModelRenderer Nose2;
 	
 	public ModelGasMask() {
+		
 		this.textureWidth = 64;
 		this.textureHeight = 32;
 		this.Nose1 = new ModelRenderer(this, 0, 21);
@@ -35,6 +36,7 @@ public class ModelGasMask extends ModelBase {
 		this.Head.addChild(this.EyeHole1);
 		this.Nose1.addChild(this.Nose2);
 		this.Head.addChild(this.EyeHole2);
+	
 	}
 	
 	@Override
@@ -43,8 +45,10 @@ public class ModelGasMask extends ModelBase {
 	}
 	
 	public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+	
 	}
 }

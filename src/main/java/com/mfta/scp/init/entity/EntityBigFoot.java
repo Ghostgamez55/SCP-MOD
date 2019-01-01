@@ -16,25 +16,35 @@ import net.minecraft.world.World;
 public class EntityBigFoot extends EntityMob {
 
 	public EntityBigFoot(World worldIn) {
+		
 		super(worldIn);
+		
 		this.setSize(1, 2);
 		this.tasks.addTask(1, new EntityAIWander(this, 0.7D));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
 		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.26D, true));
+	
 	}
 	
+	@Override
 	public boolean attackEntityAsMob(Entity e) {
+		
 		this.world.setEntityState(this, (byte) 4);
+		
 		return e.attackEntityFrom(DamageSource.causeMobDamage(this), 5.0F);
+	
 	}
 
 	@Override
 	protected void applyEntityAttributes() {
+		
 		super.applyEntityAttributes();
+		
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.21D);
+	
 	}
 
 }
