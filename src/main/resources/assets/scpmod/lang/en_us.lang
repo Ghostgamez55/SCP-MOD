@@ -49,3 +49,8 @@ item.infected_rabbit_raw.name=Infected Rabbit Raw
 
 //ingots
 item.reinforced_iron_ingot.name=Reinforced Iron Ingot
+
+//Guide
+guide.scpmod.title=SCP Handbook
+guide.scpmod.author=Elisis
+guide.scpmod.welcome=Secure. Contain. Protect.
