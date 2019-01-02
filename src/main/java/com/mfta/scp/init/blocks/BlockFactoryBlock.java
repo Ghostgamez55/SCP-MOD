@@ -7,13 +7,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
 
-public class BlockFactoryBlock extends Block {
+public class BlockFactoryBlock extends BlockSCP {
 
-	public BlockFactoryBlock() {
+	public BlockFactoryBlock(String name) {
 		
-		super(Material.ANVIL);		
+		super(Material.ANVIL, name);		
 		
-		this.setCreativeTab(SCPTabs.SCP_TAB_BLOCKS);
 		this.translucent = true;
 	
 	}

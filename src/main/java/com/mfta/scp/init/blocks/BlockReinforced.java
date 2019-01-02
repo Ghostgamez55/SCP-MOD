@@ -5,9 +5,9 @@ import net.minecraft.block.material.Material;
 
 public class BlockReinforced extends BlockSCP {
 	
-	public BlockReinforced(Material material) {
+	public BlockReinforced(Material material, String name) {
 		
-		super(material);
+		super(material, name);
 		
 		setSoundType(SoundType.STONE);
 		setHardness(2.0f);

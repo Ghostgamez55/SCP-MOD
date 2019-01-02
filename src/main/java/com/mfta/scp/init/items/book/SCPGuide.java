@@ -31,24 +31,33 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+
+/**
+ * The guide for the mod. Includes SCP entries, crafting recipes and various other things.
+ * Uses Guide-API
+ * @author Elisis 
+ * @since 2/01/2019
+ *
+ */
 @GuideBook
 public class SCPGuide implements IGuideBook {
 
 	public static Book guide;
 	
+	public static final String pageOne173 = "§lItem #: §rSCP-173\n" 		//Sorry for the wall of text - I need to add a text file for this at some point.
+									   	  + "§lObject Class: §rEuclid\n"
+										  + "";
+	
 	@Nonnull
 	@Override
 	public Book buildBook() {
 			
-		
 		//Create map of entries. A LinkedHashMap is used to retain order.
 		Map<ResourceLocation, EntryAbstract> entityEntries = new LinkedHashMap<>();
 		Map<ResourceLocation, EntryAbstract> itemEntries = new LinkedHashMap<>();			
 		
+		
 		//SCP-173 Entry
-			
-		//BufferedReader in173 = new BufferedReader(new FileReader(new ResourceLocation(Reference.MOD_ID, "/book/text/173").getPath()));
-			
 		List<IPage> pages173 = new ArrayList<>();			
 		
 		/*
@@ -59,7 +68,7 @@ public class SCPGuide implements IGuideBook {
 		}
 		*/
 			
-		pages173.add(new PageText("§lItem #: §rSCP-173\n"));	
+		pages173.add(new PageText(pageOne173));	
 		pages173.add(new PageText("§lObject Class: §rEuclid\n"));
 		entityEntries.put(new ResourceLocation(Reference.MOD_ID, "/book/entry_173"), new EntryItemStack(pages173, "SCP-173", new ItemStack(ModBlocks.CONCRETE)));
 			

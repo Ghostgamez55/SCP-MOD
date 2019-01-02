@@ -1,13 +1,15 @@
 package com.mfta.scp.init.blocks;
 
+import com.mfta.scp.Reference;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockConcrete extends BlockSCP {
 	
-	public BlockConcrete(Material material) {
+	public BlockConcrete(Material material, String name) {
 		
-		super(material);
+		super(material, name);
 		
 		setSoundType(SoundType.STONE);
 		setHardness(2.0f);

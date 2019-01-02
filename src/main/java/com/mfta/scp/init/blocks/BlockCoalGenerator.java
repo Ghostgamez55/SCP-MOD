@@ -18,9 +18,9 @@ import net.minecraft.world.World;
 public class BlockCoalGenerator extends BlockSCP
 {
 
-	public BlockCoalGenerator(Material material) 
+	public BlockCoalGenerator(Material material, String name) 
 	{
-		super(material);
+		super(material, name);
 		
 	}
 	
