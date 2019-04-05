@@ -27,7 +27,7 @@ import net.minecraft.world.gen.feature.WorldGenEndIsland;
  */
 public class ChunkGeneratorPocketDimension implements IChunkGenerator {
 	
-	private final Random rand;
+	private Random rand;
     
 	protected static final IBlockState DECAYED_STONE = ModBlocks.DECAYED_STONE.getDefaultState();
     protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -43,11 +43,11 @@ public class ChunkGeneratorPocketDimension implements IChunkGenerator {
     public NoiseGeneratorOctaves noiseGen6;
     
     /** Reference to the World object. */
-    private final World world;
+    private World world;
     
     /** are map structures going to be generated (e.g. strongholds) */
-    private final boolean mapFeaturesEnabled;
-    private final BlockPos spawnPoint;
+    private boolean mapFeaturesEnabled;
+    private BlockPos spawnPoint;
     private MapGenPocketDimension endCityGen = new MapGenPocketDimension(this);
     private NoiseGeneratorSimplex ambientNoise;
    
